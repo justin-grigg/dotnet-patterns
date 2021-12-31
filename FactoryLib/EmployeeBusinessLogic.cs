@@ -8,7 +8,7 @@ namespace FactoryLib
 
         public EmployeeBusinessLogic()
         {
-            _EmployeeDataAccess = new EmployeeDataAccess();
+            _EmployeeDataAccess = DataAccessFactory.GetEmployeeDataAccessObj();
         }
 
         public Employee GetEmployeeDetails(int id)
