@@ -1,10 +1,10 @@
 ﻿using System;
-
+using FactoryLib.Interface;
 namespace FactoryLib
 {
     public class DataAccessFactory
     {
-        public static EmployeeDataAccess GetEmployeeDataAccessObj()
+        public static IEmployeeDataAccess GetEmployeeDataAccessObj()
         {
             return new EmployeeDataAccess();
         }

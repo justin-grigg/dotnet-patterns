@@ -1,10 +1,10 @@
 ﻿using System;
-
+using FactoryLib.Interface;
 namespace FactoryLib
 {
     public class EmployeeBusinessLogic
     {
-        private EmployeeDataAccess _EmployeeDataAccess;
+        private IEmployeeDataAccess _EmployeeDataAccess;
 
         public EmployeeBusinessLogic()
         {

@@ -2,7 +2,7 @@
 
 namespace FactoryLib
 {
-    public class EmployeeDataAccess
+    public class EmployeeDataAccess : Interface.IEmployeeDataAccess
     {
         public Employee GetEmployeeDetails(int id)
         {
