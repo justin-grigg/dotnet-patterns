@@ -23,7 +23,7 @@ namespace DecoratorLibTest
                 Console.WriteLine($"{f.Name} {f.Price}");
             });
 
-            Console.WriteLine(new string('#', 9));
+            Console.WriteLine($"Done: {System.Reflection.MethodBase.GetCurrentMethod().Name}");
         }
 
         [Fact]
@@ -43,7 +43,7 @@ namespace DecoratorLibTest
                 Console.WriteLine($"{f.Name} {f.Price}");
             });
 
-            Console.WriteLine(new string('#', 9));
+            Console.WriteLine($"Done: {System.Reflection.MethodBase.GetCurrentMethod().Name}");
         }
 
         [Fact]
@@ -65,7 +65,7 @@ namespace DecoratorLibTest
                 Console.WriteLine($"{f.Name} {f.Price}");
             });
 
-            Console.WriteLine(new string('#', 9));
+            Console.WriteLine($"Done: {System.Reflection.MethodBase.GetCurrentMethod().Name}");
         }
 
         [Fact]
@@ -87,7 +87,30 @@ namespace DecoratorLibTest
                 Console.WriteLine($"{f.Name} {f.Price}");
             });
 
-            Console.WriteLine(new string('#', 9));
+            Console.WriteLine($"Done: {System.Reflection.MethodBase.GetCurrentMethod().Name}");
+        }
+
+        [Fact]
+        public void TestMenuBuilder()
+        {
+            MenuBuilder menuBuilder = new MenuBuilder(new List<IMenuItem>
+            {
+                new MenuItem("Chicken", 6.99),
+                new MenuItem("Pizza", 3.99),
+                new MenuItem("Salad", 4.99),
+            });
+
+            IMenu menu = menuBuilder
+                .WithDiscounts(0.5)
+                .WithDailySpecial(new MenuItem("Milk", 0.99, true))
+                .Build();
+
+            menu.Items.ToList().ForEach(f =>
+            {
+                Console.WriteLine($"{f.Name} {f.Price}");
+            });
+
+            Console.WriteLine($"Done: {System.Reflection.MethodBase.GetCurrentMethod().Name}");
         }
     }
 }

@@ -18,3 +18,12 @@ run xUnit test:
 ```bash
 dotnet test ./FactoryLibTest/FactoryLibTest.csproj --no-restore
 ```
+
+## Creational
+
+- Factory
+
+## Structural
+
+- Decorator <https://www.youtube.com/watch?v=4EaBHb2HBwI>
+
